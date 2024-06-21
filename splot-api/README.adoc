@@ -1,0 +1,178 @@
+// Metadata
+:title: splot_api Readme
+:source-highlighter: rouge
+:rouge-style: igor_pro
+// Enables
+:experimental:
+:toc:
+:icons: font
+// Optional
+//:sectnums:
+
+= splot_api
+
+API for sparam plotting web app
+
+
+Describe why this package was developed and what problem it was intended to solve.
+
+== Installation
+
+*Describe to end users how to install this tool if it requires anything special e.g. not just `pip install x`*
+
+NOTE: Your Python install must be setup according to the instructions on link:http://confluence.firstrf.com/display/GI/Python[confluence] in order to be able to install from FIRST RF's internal pypi server.
+
+== Usage
+
+*Explain how to use it for end users.*
+
+=== Examples
+
+.Commands
+[cols="1,3"]
+|===
+|Command |Description
+
+|cmd1
+|desc1
+
+|cmd2
+|desc2
+|===
+
+== Developing
+
+. Git clone `splot_api`
+
+. (Optional) Create your own branch to work on for your new feature:
++
+[source,shell-session]
+----
+> git switch -c new_feature_name
+----
+
+. Setup the development virtual environment:
++
+[source,shell-session]
+----
+> pipenv sync --dev
+----
+
+. Make your changes. Please write tests for all of your changes if they don't already exist! Please format your code with black (already selected in .vscode directory).
+
+. Run all tests (everything should pass)
++
+[source,shell-session]
+----
+> pytest
+----
+
+. Ensure that your code meets all formatting and linting requirements
++
+[source,shell-session]
+----
+> black .
+All done! ✨ 🍰 ✨
+50 files left unchanged.
+> flake8 --config=setup.cfg
+----
+
+. Update `CHANGELOG.adoc` with a description of your changes. If this project is customer facing, limit yourself to only the relevant public API information which will be shared with the customer.
+
+. If you are not working directly on `main`:
+.. Rebase or merge `main` to your branch and re-run all tests to ensure everything still passes.
+.. Merge your branch to `main`
+
+. (Optional) Creating a new tag will automatically release the package to the pypi server. Do so using the `bumpversion`.
+The commit your tag points to must be incorporated into the default branch for the release pipeline to succeed.
++
+[source,bash]
+----
+> bumpversion minor
+> git push
+> git push --tags
+----
+
+=== Versioning
+
+This package follows the https://semver.org/[Semantic Versioning 2.0.0] paradigm for version numbering. When you make a change, the version must be incremented for it to be installable from our internal https://pypi.firstrf.com[pypi server]. Given a version number `MAJOR.MINOR.PATCH`, increment the:
+
+- MAJOR version when you make incompatible API changes (backwards incompatible)
+- MINOR version when you add functionality in a backwards compatible manner
+- PATCH version when you make backwards compatible bug fixes to existing functions
+
+
+==== Release Candidates
+
+If required, release candidates may be used to indicate a version is pre-release. The included `.bumpversion.cfg`
+supports release candidates, but requires a special flow due to limitations with `bumpversion` itself.
+An example development flow is illustrated below:
+
+[source,bash]
+----
+# Assume we are starting at version v0.0.1, and we do a few typical bumps
+bumpversion patch
+# v0.0.1 -> v0.0.2
+
+bumpversion minor
+# v0.0.2 -> v0.1.0
+
+# at this point, development matured and we're almost ready for a 1.0.0 release
+# let's do a release candidate first before we release it to the wild
+# --new-version is required to switch over to "release candidate mode"
+bumpversion major --new-version="1.0.0rc0"
+# v0.1.0 --> v1.0.0rc0
+
+# hey! we caught a bug. Let's bump to a new RC candidate
+bumpversion pre
+# v1.0.0rc0 --> v1.0.0rc1
+
+# one more bug...
+bumpversion pre
+# v1.0.0rc1 --> v1.0.0rc2
+
+# okay. We're good to go on the official release.
+# must use --new-version again to switch back to "normal mode"
+bumpversion pre --new-version="1.0.0"
+# v1.0.0rc2 --> v1.0.0
+
+# and so on.....
+----
+
+==== IMPORTANT
+After making changes, please add brief descriptions of your changes at the
+top of the CHANGELOG.adoc file. Leave the following flag in place until ready for release.
+....
+:approved-for-release: no
+This flag needs to be switched to
+:approved-for-release: yes
+....
+when ready to release.  This will also allow you to preview the UNRELEASED
+section before submitting.  Bumping the version will fail if 'approved-for-release' is no.
+A successfull bump will replace a new 'template' section in CHANGELOG.adoc as well as move the 'approved-for-release' flag back to 'no'.
+
+
+NOTE: Please be mindful of the end audience. If this file is customer facing, only
+share information which is relevant to their available API. Each section
+should have the layout as follows:
+
+[source,asciidoc]
+.Template Section
+----
+
+ :approved-for-release: no
+ ifeval::["\{approved-for-release}" == "yes"]
+ == UNRELEASED
+ .Edit this line to be a brief description of the release
+ ====
+ .Features
+ ===
+ - Add Feature Changes Here
+ ===
+ .Bugfixes
+ ===
+ - Add Bugfix Changes Here
+ ===
+ ====
+ endif::[]
+----

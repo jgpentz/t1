@@ -1,0 +1,41 @@
+// Metadata
+:doctitle: Changelog - frf-splot_api
+:orgname: FirstRF
+:version-label: Release
+:revnumber: 0.1.0
+:revdate:
+:!example-caption:
+
+
+// Settings
+// :experimental:
+:toc:
+
+// IMPORTANT!  DO NOT CHANGE UNTIL YOU ARE READY TO BUMP VERSION
+// AND UNRELEASED SECTION HAS BEEN REVIEWED!
+// Once changged, please preview before bump to make sure no formatting mistakes were made
+:approved-for-release: no
+
+// Please be mindful of the end audience. If this file is customer facing, only
+// share information which is relevant to their available API.
+// The only lines that should be edited below are the
+//  1. Description line (first line starting with a dot and no space)
+//  2. Lines that start with '-', or new lines in the appropriate block starting with '-'
+
+ifeval::["{approved-for-release}" == "yes"]
+== UNRELEASED
+
+.Edit this line to be a brief description of the release
+=====
+.Features
+====
+- Add Feature Changes Here
+====
+.Bugfixes
+====
+- Add Bugfix Changes Here
+====
+=====
+endif::[]
+
+// AUTOMATICALLY GENERATED OUTPUT BELOW.  DO NOT EDIT BELOW HERE

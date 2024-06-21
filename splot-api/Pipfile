@@ -1,0 +1,13 @@
+[packages]
+
+[dev-packages]
+wheel = "*"
+black = "*"
+bump2version = "*"
+flake8 = "*"
+parameterized = "*"
+pytest = "*"
+pytest-cov = "*"
+mypy = "*"
+coverage = {extras = ["toml"], version = "*"}
+frf-splot-api = {editable = true, path = "."}

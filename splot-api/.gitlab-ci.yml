@@ -1,0 +1,8 @@
+# Use shared python CI configuration from:
+# https://gitlab.firstrf.com/python/python_ci
+# For the full script, see:
+# https://gitlab.firstrf.com/python/python_ci/-/blob/live/python_ci_main.yml
+include:
+  - project: 'python/python_ci'
+    ref: live
+    file: 'python_ci_main.yml'
