@@ -1,0 +1,32 @@
+:global .hidden {
+    display: none;
+}
+
+.legend {
+    margin-left: 20px;
+}
+
+.root {
+  background-color: var(--notification-color, var(--mantine-primary-color-filled));
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+  top: 0;
+  z-index: 1000;
+}
+
+.description,
+.title {
+  color: var(--mantine-color-white);
+}
+
+.closeButton {
+  color: var(--mantine-color-white);
+
+  @mixin hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}

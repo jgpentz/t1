@@ -1,0 +1,100 @@
+.navbar {
+    align-items: center;
+    justify-content: center;
+}
+
+.navbarMain {
+    flex: 1;
+    margin-top: rem(40px);
+}
+
+.navbarMainC {
+    flex: 1;
+    margin-top: rem(45px);
+}
+.icon {
+    width: rem(26px);
+    height: rem(26px);
+    border-radius: var(--mantine-radius-md);
+    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+
+
+    &[data-active] {
+        &,
+        &:hover {
+            color: var(--mantine-color-blue-light-color);
+        }
+    }
+}
+
+.linkIcon {
+  width: rem(26px);
+  height: rem(26px);
+
+  &[data-expanded] {
+    margin-right: var(--mantine-spacing-md)
+  }
+}
+
+.collapse {
+    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+    &:hover {
+        background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-5));
+    }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: var(--mantine-font-size-sm);
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-1));
+  padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
+  margin-left: rem(3px);
+  border-radius: var(--mantine-radius-sm);
+  font-weight: 500;
+
+  @mixin hover {
+    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+
+    .linkIcon {
+      color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+    }
+  }
+
+  &[data-active] {
+    &,
+    &:hover {
+      background-color: var(--mantine-color-blue-light);
+      color: var(--mantine-color-blue-light-color);
+
+      .linkIcon {
+        color: var(--mantine-color-blue-light-color);
+      }
+    }
+  }
+}
+
+.linkCollapsed {
+    width: rem(49px);
+    height: rem(46px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--mantine-radius-md);
+    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+    &:hover {
+        background-color: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
+    }
+
+    &[data-active] {
+        &,
+        &:hover {
+            background-color: var(--mantine-color-blue-light);
+            color: var(--mantine-color-blue-light-color);
+        }
+    }
+}
+
+
